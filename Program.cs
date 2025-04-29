@@ -9,6 +9,8 @@ var app = builder.Build();
 
 app.MapControllers();
 
+// Caso precise do serviço em outro lugar, como no Program.cs
+// ou em um middleware, você pode usar o CreateScope para criar um escopo
 using (var scope = app.Services.CreateScope())
 {
     var service = scope

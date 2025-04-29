@@ -19,6 +19,6 @@ public class WeatherController : ControllerBase
     
     [HttpGet("/from-services")]
     public IEnumerable<WeatherForecast> GetFromServices(
-        IWeatherService service)
+        [FromServices]IWeatherService service)
         => service.Get();
 }
